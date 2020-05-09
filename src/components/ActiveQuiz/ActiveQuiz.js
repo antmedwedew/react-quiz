@@ -8,14 +8,16 @@ const ActiveQuiz = props => (
       <span>
         <strong>2.</strong>
         &nbsp;
-        Это пример вопроса
+        {props.question}
       </span>
 
-      <small>4 из 12</small>
+      <small>{ props.answerNumber } из { props.quizLength } </small>
     </p>
     
     <AnswersList 
       answers={props.answers}
+      onAnswerClick={props.onAnswerClick}
+      state={props.state}
     />
     
   </div>
