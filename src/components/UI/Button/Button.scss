@@ -1,0 +1,36 @@
+@import '../../../variables.scss';
+
+.Button {
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 4px;
+    margin-right: 20px;
+    border: 1px solid #cccccc;
+    color: #000000;
+    text-transform: uppercase;
+    font-family: 'Roboto-Bold';
+    font-size: 13px;
+    &:focus {
+        outline: none;
+    }
+    &:active {
+        box-shadow: inset 2px 2px 1px rgba(0, 0, 0, .2);
+    }
+    &:disabled {
+        background: #cccccc;
+        color: #000000;
+        cursor: not-allowed;
+    }
+    &.success {
+        background: $color-success;
+        color: #ffffff
+      }
+    &.error {
+        background: $color-error;
+        color: #ffffff
+    }
+    &.primary {
+        background: #2884f6;
+        color: #ffffff
+    }
+}
