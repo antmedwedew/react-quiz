@@ -10,6 +10,9 @@
     text-transform: uppercase;
     font-family: 'Roboto-Bold';
     font-size: 13px;
+    &:last-child {
+        margin-right: 0;
+    }
     &:focus {
         outline: none;
     }
@@ -17,20 +20,20 @@
         box-shadow: inset 2px 2px 1px rgba(0, 0, 0, .2);
     }
     &:disabled {
-        background: #cccccc;
+        background: $color-disabled;
         color: #000000;
         cursor: not-allowed;
     }
     &.success {
         background: $color-success;
-        color: #ffffff
+        color: #000000
       }
     &.error {
         background: $color-error;
         color: #ffffff
     }
     &.primary {
-        background: #2884f6;
+        background: $color-prymary;
         color: #ffffff
     }
 }
