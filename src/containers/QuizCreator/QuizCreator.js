@@ -4,8 +4,7 @@ import Button from '../../components/UI/Button/Button'
 import {createControl, validate, validateForm} from '../../form/formFramework'
 import Input from '../../components/UI/Input/Input'
 import Select from '../../components/UI/Select/Select'
-import QuizName from '../../containers/QuizName/QuizName'
-import axios from 'axios'
+import axios from '../../axios/axios-quiz'
 
 function createOptionControl(number) {
   return createControl({
@@ -33,7 +32,6 @@ class QuizCreator extends Component {
   state = {
     rightAnswerId: 1,
     isFormValid: false,
-    quizName: 'test',
     quiz: [],
     formControls: createFormСontrols()
   }
@@ -77,12 +75,11 @@ class QuizCreator extends Component {
     event.preventDefault()
 
     try {
-      await axios.post('https://react-quiz-201f0.firebaseio.com/quizes.json', this.state.quiz)
+      await axios.post('/quizes.json', this.state.quiz)
 
       this.setState({
         quiz: [],
         isFormValid: false,
-        quizName: '',
         rightAnswerId: 1,
         formControls: createFormСontrols()
       })
@@ -153,17 +150,6 @@ class QuizCreator extends Component {
       <div className={classes.QuizCreator}>
         <div>
           <h1>Создание теста</h1>
-            
-          {
-            this.state.quizName === '' 
-            
-            ?
-
-            <QuizName 
-              quizName={this.state.quizName}
-            />
-
-            :
 
             <form onSubmit={this.submitHandler}>
               
@@ -187,7 +173,6 @@ class QuizCreator extends Component {
                 Создать тест
               </Button>
             </form>
-          }
 
         </div>
       </div>
