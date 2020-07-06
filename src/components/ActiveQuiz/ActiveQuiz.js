@@ -3,6 +3,7 @@ import classes from './ActiveQuiz.scss'
 import AnswersList from './AnswersList/AnswersList'
 
 const ActiveQuiz = props => (
+
   <div className={classes.ActiveQuiz}>
     <p className={classes.Question}>
       <span>
@@ -19,7 +20,6 @@ const ActiveQuiz = props => (
       onAnswerClick={props.onAnswerClick}
       state={props.state}
     />
-    
   </div>
 )
 
