@@ -10,8 +10,7 @@ export function createQuizQuestion(item) {
 
 export function resetQuizCreation() {
   return {
-    type: RESET_QUIZ_CREATION,
-
+    type: RESET_QUIZ_CREATION
   }
 }
 
