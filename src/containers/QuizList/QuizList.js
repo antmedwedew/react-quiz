@@ -13,7 +13,6 @@ class QuizList extends Component {
       return (
         <li
           key={quiz.id}
-
         >
           <NavLink to={"/quiz/" + quiz.id}>
             {quiz.name}
@@ -34,11 +33,12 @@ class QuizList extends Component {
           <h1>Список тестов</h1>
 
           { this.props.loading && this.props.quizes.lehgth !== 0
-            ? <Loader />
-            : <ul>
-                { this.renderQuizes() }
-              </ul>
+              ? <Loader />
+              : <ul>
+                  { this.renderQuizes() }
+                </ul>
           }
+          
         </div>
       </div>
     );

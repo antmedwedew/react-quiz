@@ -17,8 +17,6 @@ export function fetchQuizes() {
 
     try {
       const response = await axios.get('/quizes.json')
-      console.log(response.data)
-
       const quizes = []
 
       Object.keys(response.data).map((key, index) => {
