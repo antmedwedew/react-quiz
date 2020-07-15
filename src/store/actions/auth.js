@@ -45,6 +45,24 @@ export function logout() {
   }
 }
 
+export function autoLogin() {
+  return dispatch => {
+    const token = localStorage.getItem('token')
+
+    if (!token) {
+      dispatch(logout())
+    } else {
+      const exppirationDate = new Date(localStorage.getItem('expirationData'))
+      if (exppirationDate <= new Date()) {
+        dispatch(logout())
+      } else {
+        dispatch(authSuccess(token))
+        dispatch(autoLogout((exppirationDate.getTime() - new Date().getTime()) / 1000))
+      }
+    }
+  }
+}
+
 export function authSuccess (token) {
   return {
     type: AUTH_SUCCESS,
