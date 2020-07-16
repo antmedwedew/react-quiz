@@ -37,3 +37,11 @@
         color: #ffffff
     }
 }
+
+@media screen and (max-width: 425px) {
+    .Button {
+        &:last-child {
+            margin-top: 12px;
+        }
+    }
+}

@@ -14,3 +14,11 @@
     left: 320px;
   }
 }
+
+@media screen and (width: 320px) {
+  .MenuToggle {
+    &.open {
+      left: 280px;
+    }
+  }
+}

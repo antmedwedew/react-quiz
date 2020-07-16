@@ -11,5 +11,14 @@
   }
   .QuizWrapper {
     width: 600px;
+    padding: 15px;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .Quiz {
+    h1 {
+      text-align: center;
+    }
   }
 }
